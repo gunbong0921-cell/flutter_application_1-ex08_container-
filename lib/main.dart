@@ -79,8 +79,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(fontSize: 30, color: Colors.white),
               ),
             ),
+            // 위젯 사이의 간격을 줄때 주로 사용
             const SizedBox(height: 5),
 
+            // 컨테이너에 이미지를 데코레이션으로 삽입
             Container(
               width: 100.0,
               height: 40.0,
@@ -89,11 +91,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   image: AssetImage('assets/images/300x100.png'),
                 ),
               ),
+              // 텍스트버튼 위젯으로 마치 이미지 버튼과 같은 효과를 적용
               child: TextButton(
                 child: const Text(''),
                 onPressed: () => _onClick(1),
               ),
             ),
+            /**
+            InkWell위젯 : Text와 같이 제스처 기능을 제공하지 않는 위젯을 래핑하여 onTap기능을 제공한다. 터치했을때
+            물결 모양의 애니메이션이 발생된다. 
+             */
             InkWell(
               onTap: () => _onClick(2),
               child: Ink.image(
